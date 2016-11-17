@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+
+<head>
+<title>Service</title>
+<meta charset="utf-8"/>
+<script src="{% static 'js/jquery-2.2.0.min.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<style>
+div, p {
+  margin: 10px 0;
+}
+#errors {
+  color: red;
+}
+#result {
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+<h1>Service interface</h1>
+<form>
+ <div>
+  <label for="question">Question:</label>
+  <input type="text" id="question" name="question"/>
+  <input type="radio" id="qvf1" name="qvf" value="1" checked /><label for="qvf1">base form</label>
+  <input type="radio" id="qvf2" name="qvf" value="2"/><label for="qvf2">past simple</label>
+  <input type="radio" id="qvf3" name="qvf" value="3"/><label for="qvf3">past participle</label>
+  <button type="button" id="requestVerb">Request verb</button>
+ </div>
+ <div>
+  <label for="answer">Answer:</label>
+  <input type="text" id="answer" name="answer"/>
+  <input type="radio" id="avf1" name="avf" value="1"/><label for="avf1">base form</label>
+  <input type="radio" id="avf2" name="avf" value="2" checked /><label for="avf2">past simple</label>
+  <input type="radio" id="avf3" name="avf" value="3"/><label for="avf3">past participle</label>
+  <button type="submit" id="submitAnswer">Submit answer</button>
+ </div>
+</form>
+
+<p id="errors">&nbsp;</p>
+<p>Result: <span id="result"></span></p>
+<p>Statistics: YES: <span id="yes"></span>, NO: <span id="no"></span></p>
+</body>
+
+</html>
